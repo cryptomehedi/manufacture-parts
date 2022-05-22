@@ -34,7 +34,7 @@ const OrderParts = () => {
             <h2 className='text-3xl mb-12 font-medium text-center'>How to order parts?</h2>
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-7'>
                 {
-                    orderSystems.map((o,i) => <div className='bg-blue-100 rounded-lg p-2 shadow-xl'>
+                    orderSystems.map((o,i) => <div key={i} className='bg-blue-100 rounded-lg p-2 shadow-xl'>
                         <div className='flex justify-center'><img className='w-32' src={o.img} alt="" /></div>
                         <h3 className='text-xl mt-10 mb-6'>{o.name}</h3>
                         <div className='flex'>

@@ -1,0 +1,139 @@
+[
+    {
+        "_id": 1,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 2,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 3,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 17,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 4,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 5,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 6,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 7,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 8,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 9,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 10,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 11,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 12,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 13,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 14,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 15,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    },
+    {
+        "_id": 16,
+        "name": "Seagate Barracuda SSD",
+        "img": "https://i.ibb.co/KNnfL3z/neon-lights-hd-HD.jpg",
+        "description": "BarraCuda SSD solutions come in both 2.5 SATA and M.2 2280 form factors, perfect for ultra thin and ultra small laptops, mini PCs, and desktop PCs that need next-level SSD speed for accelerated applications and multitasking.",
+        "available": 50000000,
+        "price" : 300
+    }
+    
+]

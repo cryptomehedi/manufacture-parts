@@ -79,7 +79,7 @@ const MakeCustomParts = () => {
             <h2 className='text-3xl mb-12 mt-20 font-medium text-center'>Turbocharge the way you make custom parts</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 text-center'>
                 {
-                    makeCustoms.map(m=> <div className='grayscale hover:grayscale-0 duration-500'>
+                    makeCustoms.map((m,i)=> <div className='grayscale hover:grayscale-0 duration-500' key={i}>
                         <div className='flex justify-center'><img className="w-40" src={m.img} alt="" /></div>
                         <h2 className='text-xl font-medium my-4'>{m.name}</h2>
                         <p className=''>{m.description}</p>

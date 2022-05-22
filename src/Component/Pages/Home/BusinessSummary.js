@@ -7,23 +7,23 @@ const BusinessSummary = () => {
             <div className='grid grid-cols-1 lg:grid-cols-4 gap-7'>
                 <div className='text-center'>
                     <p className='text-xl font-medium'>Customers</p>
-                    <div className='flex justify-center my-2'><img className='w-24 hover:scale-125 duration-500' src="https://cdn-icons-png.flaticon.com/512/2651/2651001.png" alt="" /></div>
-                    <p className='text-xl font-medium'>30,000+</p>
+                    <div className='flex justify-center my-2'><img className='w-24 hover:scale-125 hover:animate-spin' src="https://cdn-icons-png.flaticon.com/512/2651/2651001.png" alt="" /></div>
+                    <p className='text-xl font-medium'>300 +</p>
                 </div>
                 <div className='text-center'>
                     <p className='text-xl font-medium'>Countries</p>
-                    <div className='flex justify-center my-2'><img className='w-24 hover:animate-spin' src="https://cdn-icons-png.flaticon.com/512/2947/2947656.png" alt="" /></div>
-                    <p className='text-xl font-medium'>40+</p>
+                    <div className='flex justify-center my-2'><img className='w-24 hover:scale-105 hover:animate-spin' src="https://cdn-icons-png.flaticon.com/512/2947/2947656.png" alt="" /></div>
+                    <p className='text-xl font-medium'>40 +</p>
                 </div>
                 <div className='text-center'>
                     <p className='text-xl font-medium'>Feedback</p>
-                    <div className='flex justify-center my-2'><img className='w-24 hover:scale-110 duration-500' src="https://cdn-icons-png.flaticon.com/512/1484/1484584.png" alt="" /></div>
-                    <p className='text-xl font-medium'>300+</p>
+                    <div className='flex justify-center my-2'><img className='w-24 hover:scale-125 hover:animate-spin' src="https://cdn-icons-png.flaticon.com/512/1484/1484584.png" alt="" /></div>
+                    <p className='text-xl font-medium'>300 +</p>
                 </div>
                 <div className='text-center'>
                     <p className='text-xl font-medium'>Parts Quoted</p>
-                    <div className='flex justify-center my-2'><img className='w-24 hover:scale-110 duration-500' src="https://cdn-icons.flaticon.com/png/512/4879/premium/4879886.png?token=exp=1653251806~hmac=081b984892d3ab89efbc449f28c863eb" alt="" /></div>
-                    <p className='text-xl font-medium'>1 Million+</p>
+                    <div className='flex justify-center my-2'><img className='w-24 hover:scale-125 hover:animate-spin' src="https://cdn-icons.flaticon.com/png/512/4879/premium/4879886.png?token=exp=1653251806~hmac=081b984892d3ab89efbc449f28c863eb" alt="" /></div>
+                    <p className='text-xl font-medium'>100 +</p>
                 </div>
             </div>
         </div>

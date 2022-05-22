@@ -8,7 +8,7 @@ module.exports = {
     },
     extend: {
       animation: {
-        "fade": "fadeInDown 5s ease-in-out infinite",
+        "fadeOut": "fadeOut 5s ease-in-out infinite",
       },
       keyframes: (theme) => ({
         fadeOut: {
