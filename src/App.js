@@ -1,8 +1,17 @@
+import { Route, Routes } from "react-router-dom";
+import Home from "./Component/Pages/Home/Home";
+import Footer from "./Component/Pages/Shared/Footer";
+import Nav from "./Component/Pages/Shared/Nav";
+
 
 function App() {
   return (
-    <div className="drop-shadow-2xl p-4 h-20 w-20">
-      <h2>hello</h2>
+    <div>
+      <Nav/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+      </Routes>
+      <Footer/>
     </div>
   );
 }
