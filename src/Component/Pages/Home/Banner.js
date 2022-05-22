@@ -32,7 +32,7 @@ const features = [
 
 const Banner = () => {
     return (
-        <div>
+        <div className='mb-9'>
             <div>
                 <div className="hero lg:min-h-screen bg-cover rounded-lg bg-bannerImg">
                     <div className="hero-content flex-col lg:flex-row-reverse">
@@ -60,7 +60,7 @@ const Banner = () => {
                 </div>
             </div>
             <div>
-                <div className='grid grid-cols-1 lg:grid-cols-5 lg:mx-4 gap-6'>
+                <div className='grid grid-cols-1 lg:grid-cols-5 gap-6'>
                     {
                         features.map((feature, i)=> <div className='hover:scale-110 duration-500  flex justify-evenly items-center md:block  rounded font-medium p-4 lg:text-center bg-indigo-200' key={i} >
                             <p className=''>{feature.name}</p>

@@ -8,9 +8,11 @@ function App() {
   return (
     <div>
       <Nav/>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-      </Routes>
+      <div className='px-4 md:px-9 lg:px-12'>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+        </Routes>
+      </div>
       <Footer/>
     </div>
   );

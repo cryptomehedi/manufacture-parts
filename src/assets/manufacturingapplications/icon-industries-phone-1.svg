@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="icons" viewBox="0 0 250 250">
+  <defs>
+    <style>.cls-1{fill:#253842;}</style>
+  </defs>
+  <title>icon-industries-waste-phone-001</title>
+  <path class="cls-1" d="M243.53,74.31,175.7,6.47a22.08,22.08,0,0,0-31.21,0l-138,138a22.05,22.05,0,0,0,0,31.21L74.3,243.54a22.1,22.1,0,0,0,31.21,0l138-138a22.05,22.05,0,0,0,0-31.21ZM132,34.54,215.46,118,118,215.47,34.54,132ZM97.71,235.74a11.06,11.06,0,0,1-15.61,0L14.27,167.9a11,11,0,0,1,0-15.6l12.47-12.47,83.44,83.44Zm138-138-12.47,12.47L139.82,26.74l12.47-12.47a11,11,0,0,1,15.61,0l67.83,67.84a11,11,0,0,1,0,15.61Z"></path>
+  <rect class="cls-1" x="186.16" y="48.4" width="11.03" height="19.85" transform="translate(14.9 152.62) rotate(-45)"></rect>
+  <rect class="cls-1" x="52.81" y="176.79" width="11.03" height="29.78" transform="translate(-118.46 97.39) rotate(-45)"></rect>
+  <rect class="cls-1" x="203.71" y="70.91" width="11.03" height="9.93" transform="translate(7.63 170.17) rotate(-45)"></rect>
+</svg>

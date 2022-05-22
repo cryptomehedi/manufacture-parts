@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="icons" viewBox="0 0 250 250">
+  <defs>
+    <style>.cls-1{fill:#253842;}</style>
+  </defs>
+  <title>icon-industries-technology-computerchip-001</title>
+  <path class="cls-1" d="M38,212H212V38H38Zm10.87-163H201.09V201.09H48.91Z"></path>
+  <path class="cls-1" d="M76.09,173.91h97.82V76.09H76.09ZM87,87H163V163H87Z"></path>
+  <rect class="cls-1" x="70.65" width="10.87" height="27.17"></rect>
+  <rect class="cls-1" x="103.26" width="10.87" height="27.17"></rect>
+  <rect class="cls-1" x="135.87" width="10.87" height="27.17"></rect>
+  <rect class="cls-1" x="168.48" width="10.87" height="27.17"></rect>
+  <rect class="cls-1" x="70.65" y="222.83" width="10.87" height="27.17"></rect>
+  <rect class="cls-1" x="103.26" y="222.83" width="10.87" height="27.17"></rect>
+  <rect class="cls-1" x="135.87" y="222.83" width="10.87" height="27.17"></rect>
+  <rect class="cls-1" x="168.48" y="222.83" width="10.87" height="27.17"></rect>
+  <rect class="cls-1" y="70.65" width="27.17" height="10.87"></rect>
+  <rect class="cls-1" y="103.26" width="27.17" height="10.87"></rect>
+  <rect class="cls-1" y="135.87" width="27.17" height="10.87"></rect>
+  <rect class="cls-1" y="168.48" width="27.17" height="10.87"></rect>
+  <rect class="cls-1" x="222.83" y="70.65" width="27.17" height="10.87"></rect>
+  <rect class="cls-1" x="222.83" y="103.26" width="27.17" height="10.87"></rect>
+  <rect class="cls-1" x="222.83" y="135.87" width="27.17" height="10.87"></rect>
+  <rect class="cls-1" x="222.83" y="168.48" width="27.17" height="10.87"></rect>
+</svg>
