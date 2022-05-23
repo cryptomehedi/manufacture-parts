@@ -3,6 +3,7 @@ import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import MakeCustomParts from './MakeCustomParts';
 import OrderParts from './OrderParts';
+import Reviews from './Reviews';
 import ToolsOrParts from './ToolsOrParts';
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <OrderParts/>
             <BusinessSummary/>
             <ToolsOrParts/>
+            <Reviews/>
         </div>
     );
 };
