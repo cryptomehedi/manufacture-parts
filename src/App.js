@@ -9,6 +9,9 @@ import Registration from "./Component/Pages/Login-Registration/Registration";
 import Footer from "./Component/Pages/Shared/Footer";
 import Nav from "./Component/Pages/Shared/Nav";
 import 'react-toastify/dist/ReactToastify.css';
+import DashBoard from "./Component/Pages/DashBoard/DashBoard";
+import MyOrder from "./Component/Pages/DashBoard/MyOrder";
+import MyReview from "./Component/Pages/DashBoard/MyReview";
 
 
 function App() {
@@ -18,11 +21,15 @@ function App() {
       <div className='px-4 md:px-9 lg:px-12'>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/inventory" element={<Inventory/>} />
+          <Route path="inventory" element={<Inventory/>} />
           <Route path="/inventory/:partsId" element={<PartsDetails/>} />
           <Route path="/inventory/:partsId/purchase" element={<Purchase/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Registration/>} />
+          <Route path="/dashboard" element={<DashBoard/>} >
+            <Route index element={<MyOrder/>}/>
+            <Route path="my-review" element={<MyReview />} />
+          </Route>
         </Routes>
       </div>
       <Footer/>

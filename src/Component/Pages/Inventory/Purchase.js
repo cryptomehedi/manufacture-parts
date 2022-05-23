@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
@@ -11,14 +11,15 @@ const Purchase = () => {
     const [user] = useAuthState(auth)
     const {partsId} = useParams()
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate()
     const restAvailable = JSON.parse(localStorage.getItem('restAvailable'))
-    
     // let {price} = restAvailable
     const userInfo = user?.email
     const order = JSON.parse(localStorage.getItem('order'))
+    
     let { name, orderQuantity, totalPrice, img} = order
     // console.log(itemName);
-
+    
     // 
 
         const onSubmit = async data => {
@@ -38,6 +39,9 @@ const Purchase = () => {
                         if(data.status === 200){
                             console.log("object");
                             toast.success('Your order has been Placed')
+                            localStorage.removeItem('order')
+                            localStorage.removeItem('restAvailable')
+                            navigate('/dashboard')
                         }
                     })
                 }
