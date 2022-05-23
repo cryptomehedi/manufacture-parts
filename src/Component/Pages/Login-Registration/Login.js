@@ -3,7 +3,6 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
-import useToken from '../../hooks/useToken';
 import Spinner from '../Shared/Spinner';
 import SocialLogin from './SocialLogin';
 
@@ -13,18 +12,18 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail( auth );
     const emailRef = useRef('')
     const passwordRef = useRef('')
-    const location = useLocation()
-    let from = location.state?.from?.pathname || "/";
-    const navigate = useNavigate()
-    const [token] = useToken(user)
+    // const location = useLocation()
+    // let from = location.state?.from?.pathname || "/";
+    // const navigate = useNavigate()
+    // const [token] = useToken(user)
     const [error2, setError2] = useState('')
 
-    useEffect(() => {
-        if(token){
-            toast.success(`Welcome Back 😉 ... ${ user?.user?.displayName || user?.user?.email }`)
-            navigate(from, { replace: true })
-        }
-    },[user,token, navigate, from])
+    // useEffect(() => {
+    //     if(token){
+    //         toast.success(`Welcome Back 😉 ... ${ user?.user?.displayName || user?.user?.email }`)
+    //         navigate(from, { replace: true })
+    //     }
+    // },[user,token, navigate, from])
 
 
     const handleSubmit = async e => {
@@ -95,7 +94,7 @@ const Login = () => {
                                         }
                                     </div>
                     </form>
-                    <p className="text-center">New To Doctors Portal? <Link to='/register' className='text-secondary cursor-pointer'>Create New Account</Link> </p>
+                    <p className="text-center">New Here ? <Link to='/register' className='text-secondary cursor-pointer'>Create New Account</Link> </p>
                     <SocialLogin/>
                 </div>
             </div>

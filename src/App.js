@@ -3,6 +3,7 @@ import Home from "./Component/Pages/Home/Home";
 import Inventory from "./Component/Pages/Inventory/Inventory";
 import PartsDetails from "./Component/Pages/Inventory/PartsDetails";
 import Login from "./Component/Pages/Login-Registration/Login";
+import Registration from "./Component/Pages/Login-Registration/Registration";
 import Footer from "./Component/Pages/Shared/Footer";
 import Nav from "./Component/Pages/Shared/Nav";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/inventory" element={<Inventory/>} />
           <Route path="/inventory/:partsId" element={<PartsDetails/>} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Registration/>} />
         </Routes>
       </div>
       <Footer/>
