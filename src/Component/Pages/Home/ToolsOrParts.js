@@ -1,14 +1,18 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ToolsOrParts = () => {
     const [parts, setParts] = useState([])
 
     useEffect(() => {
-        axios.get('parts.json')
+        axios.get('http://localhost:4000/allParts')
         .then(data=> setParts(data.data))
     },[])
+    const navigate = useNavigate()
+    const navigateToServiceDetail = id => {
+        navigate(`/inventory/${id}`)
+    }
     return (
         <div>
             <h2 className='text-3xl mb-12 mt-20 font-medium text-center'>Our Parts</h2>
@@ -23,7 +27,9 @@ const ToolsOrParts = () => {
                             <h3>Minimum Order : 1000</h3>
                         </div>
                         <p className='text-xs'>Description: {part.description.slice(0,75)} <Link className='font-medium' to=''>...Reed More</Link></p>
-                        <div className='text-center my-5'><Link to='' className='p-2 px-20 bg-primary rounded-full text-white hover:bg-secondary'>Order Now</Link></div>
+                        <div className="text-center">
+                                <button onClick={()=> navigateToServiceDetail(part._id)} className="bg-primary mt-4 hover:bg-secondary text-white hover:font-medium w-full p-1 rounded">Order Now</button>
+                            </div>
                     </div>)
                 }
             </div>

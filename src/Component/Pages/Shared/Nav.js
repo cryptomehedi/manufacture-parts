@@ -9,7 +9,7 @@ const Nav = () => {
     // const [user] = useAuthState(auth)
     const menuItems =   <>
                             <li><CustomLink to="/">Home</CustomLink></li>
-                            <li><CustomLink to="/Inventory">Inventory</CustomLink></li>
+                            <li><CustomLink to="/inventory">Inventory</CustomLink></li>
                             <li><CustomLink to="/blogs">Blogs</CustomLink></li>
                             <li><CustomLink to="/about">About</CustomLink></li>
                             <li><CustomLink to="/contact-us">Contact Us</CustomLink></li>
