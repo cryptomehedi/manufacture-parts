@@ -1,6 +1,5 @@
-import axios from 'axios';
 import React, { useRef, useState } from 'react';
-import {  useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
@@ -12,57 +11,36 @@ const PartsDetails = () => {
     const [user] = useAuthState(auth)
 
     const {partsId} = useParams()
-    const stockInput = useRef(0)
+    const orderInput = useRef(0)
     const [availables, setAvailable] = useState(false)
 
-    const [productDetails, setProductDetails] = usePartDetails(partsId)
+    const [productDetails] = usePartDetails(partsId)
     const {img,name,price, available ,description} = productDetails
+    const navigate = useNavigate()
 
-
-    const handlePdUpdate = e => {
+    const handlePdUpdate = async e => {
         let name = productDetails.name
         let img = productDetails.img
         let price = productDetails.price
-        let quantity = productDetails.stock
+        let available ;
         let description = productDetails.description
-        let available 
-        if(e){
-            if(quantity > 0 ){
-                available = productDetails.available - 1
-            }else{
-                available = 0
-            }
+        const orderQuantity = parseInt(orderInput?.current?.value)
+        
+        if(orderQuantity > 999){
+            available  = productDetails.available - orderQuantity
         }else{
-            const updateStock = parseInt(stockInput?.current?.value)
-            if(!isNaN(updateStock)){
-                if(updateStock > 0){
-                    available = productDetails.available + updateStock
-                    setAvailable(false)
-                }else{
-                    return  toast.error("Update Stock Can't Be Negative")
-                }
-            }else{
-                available = productDetails.available + 1
-                setAvailable(false)
-            }
+            return toast.error("Minimum Order 1000")
         }
-
-        // const userInfo = user.email ? user.email : user.displayName
-        const delivery = {img,name,price,available, description}
-        console.log(delivery);
-        // axios.put(`https://manufacture-parts.herokuapp.cominventory/${partsId}`, {delivery, userInfo} )
-        // if(e){
-        //     if(quantity > 0){
-        //         toast.success('Product Delivery Successful')
-        //     }
-        //     else{
-        //         toast.error('Product Not Available for Delivery')
-        //     }
-        // }else{
-        //     toast.success(stock < 2 ? `${stock} Product Added Successfully` : `${stock} Products Added Successfully`)
-        // }
-        // delivery.stock === 0 && setAvailable(true)
-        // setProductDetails(delivery)
+        
+        const userInfo = user.email
+        const restAvailable = {img,name,price,available, description}
+        localStorage.setItem('restAvailable', JSON.stringify(restAvailable))
+        
+        const totalPrice = price * orderQuantity
+        const order = {img,name,totalPrice, email: userInfo, orderQuantity }
+        localStorage.setItem('order' , JSON.stringify(order))
+        
+        navigate(`/inventory/${partsId}/purchase`)
     }
 
 
@@ -79,7 +57,7 @@ const PartsDetails = () => {
                 </div>
                 
                 <div>
-                    <div className='flex justify-center items-center ml-8 md:ml-0'>
+                    <div className='flex justify-center items-center  ml-8 md:ml-0'>
                         <div>
                             <p> <span className='font-medium text-xl'> Name:</span> <span className='font-medium'> {name}</span></p>
                             <p> <span className='font-medium text-xl'> Available:</span> <span className='font-medium'> {available === 0 ? 'Sold Out' : <>{available ===1 ?  <>{available} Piece</> : <>{available} Pieces</>}</>}</span></p>
@@ -88,12 +66,12 @@ const PartsDetails = () => {
                             {
                                 1000 <= available && <form className='flex'>
                                                         <div className='mr-3 flex items-center'><PlusCircleIcon className="w-8 text-green-400 bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200 p-1" /></div>
-                                                        <input className="mt-1 focus:ring-indigo-500 hover:border-slate-500 border py-2 px-3 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-400 rounded-md" required ref={stockInput} name='stock' type="number" id="stock" placeholder='Purchase quantity'/>
+                                                        <input className="mt-1 focus:ring-indigo-500 hover:border-slate-500 border py-2 px-3 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-400 rounded-md" required ref={orderInput} name='stock' type="number" id="stock" placeholder='Purchase quantity'/>
                                                         <div className='ml-3 flex items-center'><MinusCircleIcon className="w-8 text-red-400 bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200 p-1" /></div>
                                                     </form>
                             }
                             {/* <button onClick={()=>handlePdUpdate(false)} className='p-2 mr-5 bg-gray-400  font-semibold rounded-lg hover:bg-green-400 hover:text-white duration-300 mt-3'>Update stock</button> */}
-                            <button onClick={()=>handlePdUpdate(true)} disabled={availables} className={availables? ' disabled:opacity-50 p-2 bg-gray-400 cursor-not-allowed font-semibold rounded-lg mt-3' : 'p-2 bg-gray-400  font-semibold rounded-lg hover:bg-green-400 w-full hover:text-white duration-300 mt-3'}>Purchase</button>
+                            <button onClick={()=>handlePdUpdate(false)} disabled={availables} className={availables? ' disabled:opacity-50 p-2 bg-gray-400 cursor-not-allowed font-semibold rounded-lg mt-3' : 'p-2 bg-gray-400  font-semibold rounded-lg hover:bg-green-400 w-full hover:text-white duration-300 mt-3'}>Purchase</button>
                         </div>
                     </div>
                 

@@ -12,11 +12,11 @@ const Inventory = () => {
     const [size] = useState(9)
     const [count, setCount] = useState(0)
     useEffect(() =>{
-        axios.get(`https://manufacture-parts.herokuapp.compagesParts?page=${page}&size=${size}`)
+        axios.get(`https://manufacture-parts.herokuapp.com/pagesParts?page=${page}&size=${size}`)
         .then(data =>setPrats(data.data))
     },[page, size])
     useEffect(() => {
-        axios.get('https://manufacture-parts.herokuapp.comallPartsCount')
+        axios.get('https://manufacture-parts.herokuapp.com/allPartsCount')
         .then(data => {
             const count = data.data.count
             setCount(count)
@@ -55,7 +55,7 @@ const Inventory = () => {
                             </div>
                             <p className='text-xs'>Description: {part.description.slice(0,75)} <Link className='font-medium' to=''>...Reed More</Link></p>
                             <div className="text-center">
-                                <button onClick={()=> navigateToServiceDetail(part._id)} className="bg-primary mt-4 hover:bg-secondary text-white hover:font-medium w-full p-1 rounded">Order Now</button>
+                                <button onClick={()=> navigateToServiceDetail(part._id)} className="btn border-0 bg-primary mt-4 hover:bg-secondary text-white hover:font-medium w-full p-1 rounded">Order Now</button>
                             </div>
                         </div>
                     ))}

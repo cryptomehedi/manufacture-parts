@@ -13,18 +13,20 @@ const Nav = () => {
                             <li><CustomLink to="/blogs">Blogs</CustomLink></li>
                             <li><CustomLink to="/about">About</CustomLink></li>
                             <li><CustomLink to="/contact-us">Contact Us</CustomLink></li>
-                            <li tabIndex="0">
+                            {
+                                user &&  <li tabIndex="0">
                                 <CustomLink to='/dashBoard' className="justify-between">
                                     DashBoard
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </CustomLink>
-                                <ul className="p-2">
+                                <ul className="z-40 p-2 hover:bg-secondary text-white">
                                     <li><Link to=''>Submenu 1</Link></li>
                                     <li><Link to=''>Submenu 2</Link></li>
                                 </ul>
                             </li>
+                            }
                         </>
     return (
         <div>

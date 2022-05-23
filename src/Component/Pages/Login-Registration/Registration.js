@@ -1,9 +1,11 @@
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/solid';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Spinner from '../Shared/Spinner';
 import SocialLogin from './SocialLogin';
 
@@ -13,18 +15,18 @@ const Registration = () => {
     const { register, formState: { errors }, handleSubmit, watch } = useForm();
     const [show, setShow] = useState(false)
     const [checked, setChecked] = useState(false)
-    // const [token] = useToken(user)
+    const [token] = useToken(user)
 
-    // const location = useLocation()
-    // let from = location.state?.from?.pathname || "/";
-    // const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate()
     
-    // useEffect(()=>{
-    //     if(token){
-    //         toast.success(`Congratulations ! "${user?.user?.displayName || user?.user?.email}" Please Confirm Your Email Address`)
-    //         navigate(from, { replace: true })
-    //     }
-    // },[token, navigate, user, from])
+    useEffect(()=>{
+        if(token){
+            toast.success(`Congratulations ! "${user?.user?.displayName || user?.user?.email}" Please Confirm Your Email Address`)
+            navigate(from, { replace: true })
+        }
+    },[token, navigate, user, from])
 
     const pass = useRef({});
     pass.current = watch("password", "");
@@ -36,12 +38,12 @@ const Registration = () => {
         await  createUserWithEmailAndPassword(email , password)
         await updateProfile({ displayName });
     };
-
+    
     return (
         <div className='flex justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="card-title flex justify-center">Login</h2>
+                    <h2 className="card-title flex justify-center">Registration</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">
                             <label className="label">
