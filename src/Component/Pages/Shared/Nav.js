@@ -1,12 +1,12 @@
+import { signOut } from 'firebase/auth';
 import React  from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import auth from '../../../firebase.init';
-// import { signOut } from 'firebase/auth';
+import auth from '../../../firebase.init';
 import CustomLink from './CustomLink';
 
 const Nav = () => {
-    // const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth)
     const menuItems =   <>
                             <li><CustomLink to="/">Home</CustomLink></li>
                             <li><CustomLink to="/inventory">Inventory</CustomLink></li>
@@ -48,7 +48,11 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/login" className="btn btn-primary bg-gradient-to-r from-[#2538BF] to-[#4475F2] text-white uppercase font-bold ml-2">Login</Link>
+                    {
+                        user ? <button className="btn btn-primary bg-gradient-to-r from-secondary to-primary text-white uppercase font-bold ml-2" onClick={()=> {signOut(auth); localStorage.removeItem('accessToken')}}>Sign Out</button> :
+                        <Link to="/login" className="btn btn-primary bg-gradient-to-r from-[#2538BF] to-[#4475F2] text-white uppercase font-bold ml-2">Login</Link>
+                    }
+                    
                 </div>
             </div>
         </div>
