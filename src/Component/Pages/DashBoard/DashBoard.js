@@ -6,7 +6,7 @@ const DashBoard = () => {
     return (
         <div className="drawer drawer-mobile">
             <input id="DB-sideBar" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content overflow-hidden h-40" style={{overflow: 'hidden'}}>
+            <div className="drawer-content overflow-hidden">
                 <div className='flex justify-between'>
                     <h2 className="text-3xl font-semibold text-primary">Welcome to DashBoard</h2>
                     <label htmlFor="DB-sideBar" tabIndex="1" className="btn btn-ghost lg:hidden">
