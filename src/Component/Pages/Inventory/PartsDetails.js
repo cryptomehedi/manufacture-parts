@@ -47,15 +47,19 @@ const PartsDetails = () => {
         const order = parseInt(orderInput?.current?.value)
         // const order = parseInt(e.target.stock.value)
         // console.log(order);
-        if(order > 999){
+        if(order > 999 && order < available+1){
+            console.log("object");
             setAvailable(false)
-        }else {
+        // }else if() {
+        //     setAvailable(true)
+        }
+        else{
             setAvailable(true)
         }
     }
     const handleQuantity =(e)=>{
         const order=  parseInt(orderInput?.current?.value)
-        if(available => order){
+        if(available > order){
             setOrderQuantity(false)
             let plus = order + 1000
             orderInput.current.value = plus

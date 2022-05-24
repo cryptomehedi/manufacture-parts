@@ -22,9 +22,9 @@ const Nav = () => {
                                     </svg>
                                 </CustomLink>
                                 <ul className="z-40 p-2 hover:bg-primary text-white">
-                                    <li className='hover:bg-secondary'><Link to='dashboard'>My Order</Link></li>
-                                    <li className='hover:bg-secondary'><Link to='dashboard/my-review'>My Review</Link></li>
-                                    <li className='hover:bg-secondary'><Link to='dashboard/profile'>My Profile</Link></li>
+                                    <li className='bg-secondary'><Link to='dashboard'>My Order</Link></li>
+                                    <li className='bg-secondary'><Link to='dashboard/my-review'>My Review</Link></li>
+                                    <li className='bg-secondary'><Link to='dashboard/profile'>My Profile</Link></li>
                                 </ul>
                             </li>
                             }

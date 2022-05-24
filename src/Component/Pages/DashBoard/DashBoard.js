@@ -21,6 +21,7 @@ const DashBoard = () => {
                     <li><CustomLink to='/dashboard'>My Order</CustomLink></li>
                     <li><CustomLink to='/dashboard/my-review'>Reviews</CustomLink></li>
                     <li><CustomLink to='/dashboard/profile'>My Profile</CustomLink></li>
+                    <li><CustomLink to='/dashboard/all-order'>All Order</CustomLink></li>
 
                     
                 </ul>

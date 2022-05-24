@@ -13,6 +13,7 @@ import DashBoard from "./Component/Pages/DashBoard/DashBoard";
 import MyOrder from "./Component/Pages/DashBoard/MyOrder";
 import MyReview from "./Component/Pages/DashBoard/MyReview";
 import MyProfile from "./Component/Pages/DashBoard/MyProfile";
+import ManageAllOrders from "./Component/Pages/DashBoard/ManageAllOrders";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route index element={<MyOrder/>}/>
             <Route path="my-review" element={<MyReview />} />
             <Route path="profile" element={<MyProfile />} />
+            <Route path="all-order" element={<ManageAllOrders />} />
           </Route>
         </Routes>
       </div>
