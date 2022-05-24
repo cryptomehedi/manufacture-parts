@@ -8,7 +8,7 @@ const Reviews = () => {
         axios.get('reviews.json')
         .then(data => setReview(data.data))
     },[])
-    console.log(reviews);
+    // console.log(reviews);
     return (
         <div className='mb-12 mt-20'>
             <h2 className='text-3xl mb-12 font-medium text-center'>Customers Reviews</h2>

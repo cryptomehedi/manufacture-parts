@@ -17,7 +17,7 @@ const MyOrder = () => {
     if(isLoading){
         return <div className="text-center"><Spinner text='Your Total Appointments are Loading...' /></div>
     }
-    console.log(myOrder.data)
+    // console.log(myOrder.data)
     return (
         <div>
             <h2 className='text-xl text-primary text-center my-2'>My Total Order: {myOrder?.data?.length}</h2>

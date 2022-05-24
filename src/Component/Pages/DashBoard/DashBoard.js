@@ -4,7 +4,7 @@ import {  Outlet } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import CustomLink from '../Shared/CustomLink';
 const DashBoard = () => {
-    // const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth)
 
     return (
         <div className="drawer drawer-mobile">
@@ -23,6 +23,8 @@ const DashBoard = () => {
                 <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
                     <li><CustomLink to='/dashboard'>My Order</CustomLink></li>
                     <li><CustomLink to='/dashboard/my-review'>Reviews</CustomLink></li>
+                    <li><CustomLink to='/dashboard/profile'>My Profile</CustomLink></li>
+
                     
                 </ul>
             
