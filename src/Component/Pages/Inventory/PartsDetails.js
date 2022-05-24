@@ -12,12 +12,13 @@ const PartsDetails = () => {
 
     const {partsId} = useParams()
     const orderInput = useRef(0)
-    const [availables, setAvailable] = useState(false)
+    const [availables, setAvailable] = useState(true)
+    const [orderQuantitys, setOrderQuantity] = useState(false)
 
     const [productDetails] = usePartDetails(partsId)
     const {img,name,price, available ,description} = productDetails
     const navigate = useNavigate()
-
+    // let input
     const handlePdUpdate = async e => {
         let name = productDetails.name
         let img = productDetails.img
@@ -42,7 +43,33 @@ const PartsDetails = () => {
         
         navigate(`/inventory/${partsId}/purchase`)
     }
-
+    const handleSubmit = (e) =>{
+        const order = parseInt(orderInput?.current?.value)
+        // const order = parseInt(e.target.stock.value)
+        // console.log(order);
+        if(order > 999){
+            setAvailable(false)
+        }else {
+            setAvailable(true)
+        }
+    }
+    const handleQuantity =(e)=>{
+        const order=  parseInt(orderInput?.current?.value)
+        if(available => order){
+            setOrderQuantity(false)
+            let plus = order + 1000
+            orderInput.current.value = plus
+            handleSubmit()
+        }else{
+            setOrderQuantity(true)
+        }         
+        
+    }
+    const handleQuantityMinus =()=>{
+        let minus =  parseInt(orderInput?.current?.value) - 1000
+         orderInput.current.value = minus
+         handleSubmit()
+    }
 
     return (
         <div>
@@ -64,14 +91,14 @@ const PartsDetails = () => {
                             <p> <span className='font-medium text-xl'> Price:</span> <span className='font-medium'> ${price} Per Unit</span></p>
                             <p> <span className='font-medium text-xl'> Minimum Order:</span> <span className='font-medium'> 1000 Pieces</span></p>
                             {
-                                1000 <= available && <form className='flex'>
-                                                        <div className='mr-3 flex items-center'><PlusCircleIcon className="w-8 text-green-400 bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200 p-1" /></div>
-                                                        <input className="mt-1 focus:ring-indigo-500 hover:border-slate-500 border py-2 px-3 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-400 rounded-md" required ref={orderInput} name='stock' type="number" id="stock" placeholder='Purchase quantity'/>
-                                                        <div className='ml-3 flex items-center'><MinusCircleIcon className="w-8 text-red-400 bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200 p-1" /></div>
+                                1000 <= available && <form  onSubmit={e=> e.preventDefault()} className='flex'>
+                                                        <div disabled={orderQuantitys} onClick={()=>{handleQuantity()}} className='mr-3 flex items-center'><PlusCircleIcon className="w-8 text-green-400 bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200 p-1" /></div>
+                                                        <input onChange={()=>handleSubmit()} required ref={orderInput} className="mt-1 focus:ring-indigo-500 hover:border-slate-500 border py-2 px-3 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-400 rounded-md"  name='stock' type="number" id="stock" placeholder='Purchase quantity'/>
+                                                        <button disabled={availables} onClick={()=>{handleQuantityMinus()}} className='ml-3 flex items-center'><MinusCircleIcon className="w-8 text-red-400 bg-blue-100 rounded-full cursor-pointer hover:bg-blue-200 p-1" /></button>
                                                     </form>
                             }
                             {/* <button onClick={()=>handlePdUpdate(false)} className='p-2 mr-5 bg-gray-400  font-semibold rounded-lg hover:bg-green-400 hover:text-white duration-300 mt-3'>Update stock</button> */}
-                            <button onClick={()=>handlePdUpdate(false)} disabled={availables} className={availables? ' disabled:opacity-50 p-2 bg-gray-400 cursor-not-allowed font-semibold rounded-lg mt-3' : 'p-2 bg-gray-400  font-semibold rounded-lg hover:bg-green-400 w-full hover:text-white duration-300 mt-3'}>Purchase</button>
+                            <button onClick={()=>handlePdUpdate(false)} disabled={availables} className={availables? ' disabled:opacity-50 p-2 bg-gray-400 cursor-not-allowed font-semibold w-full rounded-lg mt-3' : 'p-2 bg-gray-400  font-semibold rounded-lg hover:bg-green-400 w-full hover:text-white duration-300 mt-3'}>Purchase</button>
                         </div>
                     </div>
                 

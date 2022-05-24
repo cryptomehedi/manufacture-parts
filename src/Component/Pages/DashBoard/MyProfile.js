@@ -15,7 +15,6 @@ const MyProfile = () => {
     // console.log(userProfile);
     if(isLoading){return <Spinner/>}
     const onSubmit = async data => {
-        console.log("object");
         const displayName= data.displayName || userProfile?.data?.displayName
         const education = data.education
         const phone = data.phone
