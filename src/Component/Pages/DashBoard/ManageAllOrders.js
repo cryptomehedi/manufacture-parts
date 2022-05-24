@@ -1,9 +1,7 @@
 import { TrashIcon } from '@heroicons/react/solid';
 import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
-import auth from '../../../firebase.init';
 import axiosPrivate from '../../Api/Axios';
 import Spinner from '../Shared/Spinner';
 import DeleteOrder from './DeleteOrder';
@@ -11,7 +9,7 @@ import DeleteOrder from './DeleteOrder';
 const ManageAllOrders = () => {
 
     const [deleteOrder, setDeleteOrder] =useState(null)
-    const [user] = useAuthState(auth)
+    // const [user] = useAuthState(auth)
 
 
     const {data: myOrder, isLoading, refetch} = useQuery('MyOrder', ()=> axiosPrivate.get(`http://localhost:4000/allOrder`))
@@ -21,7 +19,7 @@ const ManageAllOrders = () => {
 
     return (
         <div>
-            <h2 className='text-xl text-primary text-center my-2'>My Total Order: {myOrder?.data?.length}</h2>
+            <h2 className='text-xl text-primary text-center my-2'>Total Order: {myOrder?.data?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* <!-- head --> */}
@@ -31,7 +29,7 @@ const ManageAllOrders = () => {
                         <th className='text-center md:text-left'>Email</th>
                         <th>Parts Name</th>
                         <th className='text-center md:text-left'>Order Quality</th>
-                        <th className='text-center md:text-left'>Payment Status</th>
+                        <th className='text-center md:text-left'>Status</th>
                         <th>Cancel</th>
                     </tr>
                     </thead>

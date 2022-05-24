@@ -14,6 +14,8 @@ import MyOrder from "./Component/Pages/DashBoard/MyOrder";
 import MyReview from "./Component/Pages/DashBoard/MyReview";
 import MyProfile from "./Component/Pages/DashBoard/MyProfile";
 import ManageAllOrders from "./Component/Pages/DashBoard/ManageAllOrders";
+import AddAParts from "./Component/Pages/DashBoard/AddAParts";
+import MakeAdmin from "./Component/Pages/DashBoard/MakeAdmin";
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
             <Route path="my-review" element={<MyReview />} />
             <Route path="profile" element={<MyProfile />} />
             <Route path="all-order" element={<ManageAllOrders />} />
+            <Route path="addparts" element={<AddAParts />} />
+            <Route path="makeAdmin" element={<MakeAdmin />} />
           </Route>
         </Routes>
       </div>
