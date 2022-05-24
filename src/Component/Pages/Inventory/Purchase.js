@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';

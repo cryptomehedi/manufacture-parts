@@ -71,8 +71,8 @@ const PartsDetails = () => {
     }
     const handleQuantityMinus =()=>{
         let minus =  parseInt(orderInput?.current?.value) - 1000
-         orderInput.current.value = minus
-         handleSubmit()
+        orderInput.current.value = minus
+        handleSubmit()
     }
 
     return (

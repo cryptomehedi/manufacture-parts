@@ -6,7 +6,7 @@ const DashBoard = () => {
     return (
         <div className="drawer drawer-mobile">
             <input id="DB-sideBar" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
+            <div className="drawer-content overflow-hidden h-40" style={{overflow: 'hidden'}}>
                 <div className='flex justify-between'>
                     <h2 className="text-3xl font-semibold text-primary">Welcome to DashBoard</h2>
                     <label htmlFor="DB-sideBar" tabIndex="1" className="btn btn-ghost lg:hidden">
@@ -24,6 +24,7 @@ const DashBoard = () => {
                     <li><CustomLink to='/dashboard/all-order'>All Order</CustomLink></li>
                     <li><CustomLink to='/dashboard/addparts'>Add Parts</CustomLink></li>
                     <li><CustomLink to='/dashboard/makeAdmin'>Make Admin</CustomLink></li>
+                    <li><CustomLink to='/dashboard/manegeProduct'>Manege Product</CustomLink></li>
 
                     
                 </ul>

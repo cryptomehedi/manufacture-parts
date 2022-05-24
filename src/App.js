@@ -16,6 +16,7 @@ import MyProfile from "./Component/Pages/DashBoard/MyProfile";
 import ManageAllOrders from "./Component/Pages/DashBoard/ManageAllOrders";
 import AddAParts from "./Component/Pages/DashBoard/AddAParts";
 import MakeAdmin from "./Component/Pages/DashBoard/MakeAdmin";
+import ManageProducts from "./Component/Pages/DashBoard/ManageProducts";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="all-order" element={<ManageAllOrders />} />
             <Route path="addparts" element={<AddAParts />} />
             <Route path="makeAdmin" element={<MakeAdmin />} />
+            <Route path="manegeProduct" element={<ManageProducts />} />
           </Route>
         </Routes>
       </div>
