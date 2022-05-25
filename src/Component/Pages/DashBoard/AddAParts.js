@@ -28,7 +28,7 @@ const AddAParts = () => {
                     description: data.description,
                     img: img,
                 }
-                axiosPrivate.post('http://localhost:4000//parts', parts)
+                axiosPrivate.post('http://localhost:4000/parts', parts)
                 .then(data=> {
                     if(data.data.insertedId){
                         toast.success('Successfully Added A Parts')

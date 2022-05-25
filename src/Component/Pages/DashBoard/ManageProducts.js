@@ -24,7 +24,7 @@ const ManageProducts = () => {
         
         const available = part.available +  parseInt(count)
         const newAvailable = {available}
-        await axios.put(`http://localhost:4000//inventory/${_id}`, {newAvailable} )
+        await axios.put(`http://localhost:4000/inventory/${_id}`, {newAvailable} )
         .then(data=>{
             console.log(data.data)
             if (data.data.modifiedCount === 1){

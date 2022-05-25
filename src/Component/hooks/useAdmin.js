@@ -8,7 +8,7 @@ const useAdmin = user =>{
     useEffect(() =>{
         if(user){
             const {email} = user;
-            axiosPrivate.get(`http://localhost:4000//admin/${email}`)
+            axiosPrivate.get(`http://localhost:4000/admin/${email}`)
             .then(data=>{
                 setAdmin(data?.data)
                 setAdminLoading(false)

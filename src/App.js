@@ -19,6 +19,7 @@ import MakeAdmin from "./Component/Pages/DashBoard/MakeAdmin";
 import ManageProducts from "./Component/Pages/DashBoard/ManageProducts";
 import RequireAuth from "./Component/Pages/Shared/RequireAuth";
 import RequireAdmin from "./Component/Pages/Shared/RequireAdmin";
+import Payment from "./Component/Pages/DashBoard/Payment";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="addparts" element={<RequireAdmin><AddAParts /></RequireAdmin>} />
             <Route path="makeAdmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>} />
             <Route path="manegeProduct" element={<RequireAdmin><ManageProducts /></RequireAdmin>} />
+            <Route path="payment/:id" element={<RequireAuth><Payment /></RequireAuth>} />
           </Route>
         </Routes>
       </div>

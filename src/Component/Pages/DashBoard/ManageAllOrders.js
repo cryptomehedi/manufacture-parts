@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
     // const [user] = useAuthState(auth)
 
 
-    const {data: myOrder, isLoading, refetch} = useQuery('MyOrder', ()=> axiosPrivate.get(`http://localhost:4000//allOrder`))
+    const {data: myOrder, isLoading, refetch} = useQuery('MyOrder', ()=> axiosPrivate.get(`http://localhost:4000/allOrder`))
     if(isLoading){
         return <div className="text-center"><Spinner text='Your Total Appointments are Loading...' /></div>
     }

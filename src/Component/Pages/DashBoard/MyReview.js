@@ -16,7 +16,7 @@ const MyReview = () => {
         const rating = data.rating / 10
         const review = data.review
         const reviews = {displayName,email,rating,review}
-        axiosPrivate.post('http://localhost:4000//reviews', reviews)
+        axiosPrivate.post('http://localhost:4000/reviews', reviews)
         .then(data=>{
             console.log(data.data);
             if(data.data.insertedId){
