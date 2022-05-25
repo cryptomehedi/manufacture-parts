@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import axiosPrivate from '../../Api/Axios';
 
 
 const Purchase = () => {
@@ -28,13 +29,13 @@ const Purchase = () => {
             const phone = data.phone
             const address = data.address
             console.log(displayName, email, phone, address)
-            await axios.put(`http://localhost:4000/inventory/${partsId}`, {restAvailable, userInfo} )
+            await axiosPrivate.put(`http://localhost:4000/inventory/${partsId}`, {restAvailable, userInfo} )
             .then(data=> {
                 console.log(data.data);
                 if (data.data.modifiedCount === 1){
                     const orderItem = {img,name,totalPrice, email: userInfo, orderQuantity,phone,displayName, address }
                     console.log(order);
-                    axios.post(`http://localhost:4000/inventory`, {orderItem, userInfo} )
+                    axiosPrivate.post(`http://localhost:4000/inventory`, {orderItem, userInfo} )
                     .then(data => {
                         if(data.status === 200){
                             console.log("object");

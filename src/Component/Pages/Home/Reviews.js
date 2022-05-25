@@ -8,7 +8,6 @@ const Reviews = () => {
         axios.get('http://localhost:4000/reviews')
         .then(data => setReview((data.data).reverse()))
     },[])
-    console.log(reviews);
     return (
         <div className='mb-12 mt-20'>
             <h2 className='text-3xl mb-12 font-medium text-center'>Customers Reviews</h2>

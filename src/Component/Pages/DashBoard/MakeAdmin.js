@@ -10,7 +10,6 @@ const MakeAdmin = () => {
     if(isLoading) {
         return <Spinner/>
     }
-    console.log(users);
     return (
         <div>
             <h2 className='text-3xl'>Total Users {users.data.length}</h2>

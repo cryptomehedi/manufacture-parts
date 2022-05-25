@@ -1,15 +1,16 @@
 import { TrashIcon } from '@heroicons/react/solid';
-import axios from 'axios';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 import axiosPrivate from '../../Api/Axios';
 import Spinner from '../Shared/Spinner';
 import DeleteProduct from './DeleteProduct';
 
 const ManageProducts = () => {
     const [count, setCount] = useState(0)
-
+    const [user] = useAuthState(auth)
     const [deleteProduct, setDeleteProduct] =useState(null)
 
 
@@ -24,9 +25,8 @@ const ManageProducts = () => {
         
         const available = part.available +  parseInt(count)
         const newAvailable = {available}
-        await axios.put(`http://localhost:4000/inventory/${_id}`, {newAvailable} )
+        await axiosPrivate.put(`http://localhost:4000/inventory/${_id}`, {newAvailable , user} )
         .then(data=>{
-            console.log(data.data)
             if (data.data.modifiedCount === 1){
                 toast.success(`${name} Updated successfully`)
                 refetch()
@@ -57,7 +57,7 @@ const ManageProducts = () => {
                             <th>{i+1}</th>
                             <td>{p.name}</td>
                             <td>{p.available}</td>
-                            <td><form onsubmit={e=> e.preventDefault()}><input onChange={e=> setCount(e.target.value)} required  className="mt-1 focus:ring-indigo-500 hover:border-slate-500 border py-2 px-3 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-400 rounded-md"  name='stock' type="number" id="stock" placeholder='Purchase quantity'/></form></td>
+                            <td><form onSubmit={e=> e.preventDefault()}><input onChange={e=> setCount(e.target.value)} required  className="mt-1 focus:ring-indigo-500 hover:border-slate-500 border py-2 px-3 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-400 rounded-md"  name='stock' type="number" id="stock" placeholder='Purchase quantity'/></form></td>
                             <td><button onClick={()=>handleSubmit(p)}><span className='btn btn-sm'>Update</span></button> </td>
                             <td><label onClick={()=>setDeleteProduct(p)} htmlFor="delete-Confirm-Modal" className="btn bg-transparent hover:bg-gradient-to-r from-secondary to-primary hover:text-white text-red-400 btn-xs border-0 cursor-pointer w-10 rounded-full">{<TrashIcon/>}</label></td>
                         </tr>)

@@ -1,11 +1,11 @@
-import axios from 'axios';
 import React from 'react';
 import { toast } from 'react-toastify';
+import axiosPrivate from '../../Api/Axios';
 
 const DeleteProduct = ({refetch, deleteProduct , setDeleteProduct}) => {
     const {name, _id} =  deleteProduct
     const handleDeleteTreatments =async id=>{
-        await axios.delete(`http://localhost:4000/parts/${id}`)
+        await axiosPrivate.delete(`http://localhost:4000/parts/${id}`)
         .then(data => {
             if(data.data.deletedCount){
                 toast.success(<p><span className='text-red-500 font-bold'>{name}</span> Your Parts has Removed Successfully</p>)

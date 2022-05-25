@@ -8,7 +8,7 @@ import axiosPrivate from '../../Api/Axios';
 import Spinner from '../Shared/Spinner';
 
 const MyProfile = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit} = useForm();
     const [user] = useAuthState(auth)
     const {data: userProfile, isLoading, refetch} = useQuery('userProfile', ()=> axiosPrivate.get(`http://localhost:4000/user/${user.email}`))
     // console.log(userProfile);
@@ -19,7 +19,6 @@ const MyProfile = () => {
         const phone = data.phone
         const address = data.address
         const updateProfile = {displayName, education, phone, address}
-        console.log(updateProfile);
         await axiosPrivate.put(`http://localhost:4000/users/${user.email}`, updateProfile )
         .then(data => {
             console.log(data)

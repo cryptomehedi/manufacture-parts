@@ -5,6 +5,7 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import axiosPrivate from '../../Api/Axios';
 import Spinner from '../Shared/Spinner';
+import CheckoutForm from './CheckoutForm';
 
 const stripePromise = loadStripe('pk_test_51L1XmRBzpOyvVWJMUt5sh1mooz3W9JT5ZupXtju6tnFFy8yWInx9j6hNRvThgE7zbSez5nx6qFTSv574OVdMH0nv00iTwHKpVn');
 
@@ -36,7 +37,7 @@ const Payment = () => {
                     <div className="card flex-shrink-0 w-screen max-w-md shadow-2xl bg-base-100">
                         <div className="card-body">
                             <Elements stripe={stripePromise}>
-                                {/* <CheckoutForm appointment={data?.data} /> */}
+                                <CheckoutForm orderItem={data?.data} />
                             </Elements>
                         </div>
                     </div>
