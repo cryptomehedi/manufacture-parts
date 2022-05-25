@@ -12,11 +12,11 @@ const Inventory = () => {
     const [size] = useState(9)
     const [count, setCount] = useState(0)
     useEffect(() =>{
-        axios.get(`https://manufacture-parts.herokuapp.com/pagesParts?page=${page}&size=${size}`)
+        axios.get(`http://localhost:4000/pagesParts?page=${page}&size=${size}`)
         .then(data =>setPrats(data.data))
     },[page, size])
     useEffect(() => {
-        axios.get('https://manufacture-parts.herokuapp.com/allPartsCount')
+        axios.get('http://localhost:4000/allPartsCount')
         .then(data => {
             const count = data.data.count
             setCount(count)

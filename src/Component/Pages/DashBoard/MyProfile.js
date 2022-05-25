@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -21,7 +20,7 @@ const MyProfile = () => {
         const address = data.address
         const updateProfile = {displayName, education, phone, address}
         console.log(updateProfile);
-        await axios.put(`http://localhost:4000/users/${user.email}`, updateProfile )
+        await axiosPrivate.put(`http://localhost:4000/users/${user.email}`, updateProfile )
         .then(data => {
             console.log(data)
             if(data.data.modifiedCount === 1 && data.data.matchedCount){

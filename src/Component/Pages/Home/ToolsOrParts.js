@@ -6,7 +6,7 @@ const ToolsOrParts = () => {
     const [parts, setParts] = useState([])
 
     useEffect(() => {
-        axios.get('https://manufacture-parts.herokuapp.com/allParts')
+        axios.get('http://localhost:4000/allParts')
         .then(data=> setParts(data.data))
     },[])
     const navigate = useNavigate()

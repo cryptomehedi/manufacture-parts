@@ -11,7 +11,7 @@ const UserRow = ({user , refetch, index}) => {
         const role = 'admin'
         const position = {role}
 
-        axiosPrivate.put(`http://localhost:4000/user/admin/${email}`,position)
+        axiosPrivate.put(`http://localhost:4000//user/admin/${email}`,position)
         .then(data => {
             console.log(data?.data?.result?.modifiedCount);
             if(data?.data?.result?.modifiedCount){
@@ -28,7 +28,7 @@ const UserRow = ({user , refetch, index}) => {
         const role = ''
         const position = {role}
 
-        axiosPrivate.put(`http://localhost:4000/user/admin/${email}`,position)
+        axiosPrivate.put(`http://localhost:4000//user/admin/${email}`,position)
         .then(data => {
             console.log(data?.data?.result?.modifiedCount);
             if(data?.data?.result?.modifiedCount){

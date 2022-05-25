@@ -17,6 +17,8 @@ import ManageAllOrders from "./Component/Pages/DashBoard/ManageAllOrders";
 import AddAParts from "./Component/Pages/DashBoard/AddAParts";
 import MakeAdmin from "./Component/Pages/DashBoard/MakeAdmin";
 import ManageProducts from "./Component/Pages/DashBoard/ManageProducts";
+import RequireAuth from "./Component/Pages/Shared/RequireAuth";
+import RequireAdmin from "./Component/Pages/Shared/RequireAdmin";
 
 
 function App() {
@@ -27,18 +29,18 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="inventory" element={<Inventory/>} />
-          <Route path="/inventory/:partsId" element={<PartsDetails/>} />
-          <Route path="/inventory/:partsId/purchase" element={<Purchase/>} />
+          <Route path="/inventory/:partsId" element={<RequireAuth><PartsDetails/></RequireAuth>} />
+          <Route path="/inventory/:partsId/purchase" element={<RequireAuth><Purchase/></RequireAuth>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Registration/>} />
-          <Route path="/dashboard" element={<DashBoard/>} >
-            <Route index element={<MyOrder/>}/>
-            <Route path="my-review" element={<MyReview />} />
-            <Route path="profile" element={<MyProfile />} />
-            <Route path="all-order" element={<ManageAllOrders />} />
-            <Route path="addparts" element={<AddAParts />} />
-            <Route path="makeAdmin" element={<MakeAdmin />} />
-            <Route path="manegeProduct" element={<ManageProducts />} />
+          <Route path="/dashboard" element={<RequireAuth><DashBoard/></RequireAuth>} >
+            <Route index element={<RequireAuth><MyOrder/></RequireAuth>}/>
+            <Route path="my-review" element={<RequireAuth><MyReview /></RequireAuth>} />
+            <Route path="profile" element={<RequireAuth><MyProfile /></RequireAuth>} />
+            <Route path="all-order" element={<RequireAdmin><ManageAllOrders /></RequireAdmin>} />
+            <Route path="addparts" element={<RequireAdmin><AddAParts /></RequireAdmin>} />
+            <Route path="makeAdmin" element={<RequireAdmin><MakeAdmin /></RequireAdmin>} />
+            <Route path="manegeProduct" element={<RequireAdmin><ManageProducts /></RequireAdmin>} />
           </Route>
         </Routes>
       </div>

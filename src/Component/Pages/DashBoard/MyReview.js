@@ -16,7 +16,7 @@ const MyReview = () => {
         const rating = data.rating / 10
         const review = data.review
         const reviews = {displayName,email,rating,review}
-        axiosPrivate.post('http://localhost:4000/reviews', reviews)
+        axiosPrivate.post('http://localhost:4000//reviews', reviews)
         .then(data=>{
             console.log(data.data);
             if(data.data.insertedId){
@@ -41,9 +41,13 @@ const MyReview = () => {
                             <input {...register("rating", { required: "Your Rating is required"  })} type="range" min="10" max="50" defaultValue={50} class="range range-primary" />
                                 <div class="w-full flex justify-between text-xs px-2">
                                 <span>1</span>
+                                <span>1.5</span>
                                 <span>2</span>
+                                <span>2.5</span>
                                 <span>3</span>
+                                <span>3.5</span>
                                 <span>4</span>
+                                <span>4.5</span>
                                 <span>5</span>
                                 </div>
                             {/* <input {...register("rating", { required: "Your Rating is required"  })} type="range" min="0" max="5" defaultValue={4} class="range range-primary" /> */}

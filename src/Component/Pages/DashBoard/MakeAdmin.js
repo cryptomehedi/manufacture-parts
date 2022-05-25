@@ -6,7 +6,7 @@ import Spinner from '../Shared/Spinner';
 import UserRow from './UserRow';
 
 const MakeAdmin = () => {
-    const {data : users, isLoading, refetch} = useQuery('userc', ()=> axiosPrivate.get('http://localhost:4000/user'))
+    const {data : users, isLoading, refetch} = useQuery('userc', ()=> axiosPrivate.get('http://localhost:4000//user'))
     if(isLoading) {
         return <Spinner/>
     }

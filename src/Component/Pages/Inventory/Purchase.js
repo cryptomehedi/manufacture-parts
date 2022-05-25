@@ -28,13 +28,13 @@ const Purchase = () => {
             const phone = data.phone
             const address = data.address
             console.log(displayName, email, phone, address)
-            await axios.put(`http://localhost:4000/inventory/${partsId}`, {restAvailable, userInfo} )
+            await axios.put(`http://localhost:4000//inventory/${partsId}`, {restAvailable, userInfo} )
             .then(data=> {
                 console.log(data.data);
                 if (data.data.modifiedCount === 1){
                     const orderItem = {img,name,totalPrice, email: userInfo, orderQuantity,phone,displayName, address }
                     console.log(order);
-                    axios.post(`http://localhost:4000/inventory`, {orderItem, userInfo} )
+                    axios.post(`http://localhost:4000//inventory`, {orderItem, userInfo} )
                     .then(data => {
                         if(data.status === 200){
                             console.log("object");

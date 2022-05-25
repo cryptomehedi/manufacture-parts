@@ -5,7 +5,7 @@ const usePartDetails = productId =>{
     const [productDetails, setProductDetails] = useState([])
 
     useEffect(() => {
-        axios.get(`https://manufacture-parts.herokuapp.com/inventory/${productId}`)
+        axios.get(`http://localhost:4000/inventory/${productId}`)
         .then(data => setProductDetails(data.data))
     },[productId])
     return [productDetails, setProductDetails]

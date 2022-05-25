@@ -1,8 +1,12 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import {  Outlet } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 import CustomLink from '../Shared/CustomLink';
 const DashBoard = () => {
-
+    const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
     return (
         <div className="drawer drawer-mobile">
             <input id="DB-sideBar" type="checkbox" className="drawer-toggle" />
@@ -18,15 +22,22 @@ const DashBoard = () => {
             <div className="drawer-side">
                 <label htmlFor="DB-sideBar" className="drawer-overlay"></label> 
                 <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-                    <li><CustomLink to='/dashboard'>My Order</CustomLink></li>
-                    <li><CustomLink to='/dashboard/my-review'>Reviews</CustomLink></li>
                     <li><CustomLink to='/dashboard/profile'>My Profile</CustomLink></li>
-                    <li><CustomLink to='/dashboard/all-order'>All Order</CustomLink></li>
-                    <li><CustomLink to='/dashboard/addparts'>Add Parts</CustomLink></li>
-                    <li><CustomLink to='/dashboard/makeAdmin'>Make Admin</CustomLink></li>
-                    <li><CustomLink to='/dashboard/manegeProduct'>Manege Product</CustomLink></li>
-
-                    
+                    {
+                        user && !admin && <>
+                            <li><CustomLink to='/dashboard'>My Order</CustomLink></li>
+                            <li><CustomLink to='/dashboard/my-review'>Reviews</CustomLink></li>
+                        </>
+                    }
+                    {
+                        admin && <>
+                            <li><CustomLink to='/dashboard/all-order'>All Order</CustomLink></li>
+                            <li><CustomLink to='/dashboard/addparts'>Add Parts</CustomLink></li>
+                            <li><CustomLink to='/dashboard/makeAdmin'>Make Admin</CustomLink></li>
+                            <li><CustomLink to='/dashboard/manegeProduct'>Manege Product</CustomLink></li>
+                        
+                        </>
+                    }
                 </ul>
             
             </div>

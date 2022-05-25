@@ -3,10 +3,12 @@ import React  from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
 import CustomLink from './CustomLink';
 
 const Nav = () => {
     const [user] = useAuthState(auth)
+    const [admin] = useAdmin(user)
     const menuItems =   <>
                             <li><CustomLink to="/">Home</CustomLink></li>
                             <li><CustomLink to="/inventory">Inventory</CustomLink></li>
@@ -22,9 +24,22 @@ const Nav = () => {
                                     </svg>
                                 </CustomLink>
                                 <ul className="z-40 p-2 hover:bg-primary text-white">
-                                    <li className='bg-secondary'><Link to='dashboard'>My Order</Link></li>
-                                    <li className='bg-secondary'><Link to='dashboard/my-review'>My Review</Link></li>
                                     <li className='bg-secondary'><Link to='dashboard/profile'>My Profile</Link></li>
+                                    {
+                                        user && !admin && <>
+                                            <li className='bg-secondary'><Link to='dashboard'>My Order</Link></li>
+                                            <li className='bg-secondary'><Link to='dashboard/my-review'>My Review</Link></li>
+                                        </>
+                                    }
+                                    {
+                                        admin && <>
+                                            <li className='bg-secondary'><Link to='dashboard/all-order'>All Order</Link></li>
+                                        <li className='bg-secondary'><Link to='dashboard/addparts'>Add Parts</Link></li>
+                                        <li className='bg-secondary'><Link to='dashboard/makeAdmin'>Make Admin</Link></li>
+                                        <li className='bg-secondary'><Link to='dashboard/manegeProduct'>Manege Product</Link></li>
+                                        
+                                        </>
+                                    }
                                 </ul>
                             </li>
                             }

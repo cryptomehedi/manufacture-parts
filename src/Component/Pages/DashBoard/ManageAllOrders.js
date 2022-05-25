@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
     // const [user] = useAuthState(auth)
 
 
-    const {data: myOrder, isLoading, refetch} = useQuery('MyOrder', ()=> axiosPrivate.get(`http://localhost:4000/allOrder`))
+    const {data: myOrder, isLoading, refetch} = useQuery('MyOrder', ()=> axiosPrivate.get(`http://localhost:4000//allOrder`))
     if(isLoading){
         return <div className="text-center"><Spinner text='Your Total Appointments are Loading...' /></div>
     }
@@ -41,10 +41,14 @@ const ManageAllOrders = () => {
                             <td>{o.name}</td>
                             <td>{o.orderQuantity}</td>
                             <td>
-                                {(!o.shipped && o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-sm bg-gradient-to-r from-secondary to-primary text-white border-0 '>Shipped Now</button></Link>}
+                                {(!o.shipped && !o.paid) && <><span className='text-red-400 font-bold'>Not Paid</span></>}
+                                {(!o.shipped && o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-sm bg-gradient-to-r from-secondary to-primary text-white border-0 '>Pending</button></Link>}
                                 {(o.paid && o.shipped) && <><span className='text-green-400 font-bold'>Shipped</span></>}
                             </td>
-                            <td><label onClick={()=>setDeleteOrder(o)} htmlFor="delete-Confirm-Modal" className="btn bg-transparent hover:bg-gradient-to-r from-secondary to-primary hover:text-white text-red-400 btn-xs border-0 cursor-pointer w-10 rounded-full">{<TrashIcon/>}</label></td>
+                            <td>
+                                { o.paid && <label  htmlFor="delete-Confirm-Modal" disabled className="btn bg-transparent hover:bg-gradient-to-r from-secondary to-primary hover:text-white text-red-400 btn-xs border-0 cursor-pointer w-10 rounded-full">{<TrashIcon/>}</label>}
+                                { !o.paid && <label onClick={()=>setDeleteOrder(o)} htmlFor="delete-Confirm-Modal" className="btn bg-transparent hover:bg-gradient-to-r from-secondary to-primary hover:text-white text-red-400 btn-xs border-0 cursor-pointer w-10 rounded-full">{<TrashIcon/>}</label>}
+                            </td>
                         </tr>)
                         }
                     </tbody>
