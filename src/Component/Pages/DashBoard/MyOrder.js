@@ -13,7 +13,7 @@ const MyOrder = () => {
     const [user] = useAuthState(auth)
 
 
-    const {data: myOrder, isLoading, refetch} = useQuery('MyOrder', ()=> axiosPrivate.get(`http://localhost:4000/order?customer=${user.email}`))
+    const {data: myOrder, isLoading, refetch} = useQuery('MyOrder', ()=> axiosPrivate.get(`https://manufacture-parts.herokuapp.com/order?customer=${user.email}`))
     if(isLoading){
         return <div className="text-center"><Spinner text='Your Total Appointments are Loading...' /></div>
     }

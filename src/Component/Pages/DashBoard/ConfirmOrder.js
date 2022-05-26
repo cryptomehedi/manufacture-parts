@@ -6,7 +6,7 @@ const ConfirmOrder = ({refetch, confirmOrder , setConfirmOrder}) => {
     const {name, _id} =  confirmOrder
     const handleConfirmOrder =async id=>{
 
-        axiosPrivate.put(`http://localhost:4000/orderShipped/${id}`)
+        axiosPrivate.put(`https://manufacture-parts.herokuapp.com/orderShipped/${id}`)
             .then(data=>{
                 if(data.data.modifiedCount === 1){
                     toast.success(`Parts Shipped Successfully`)

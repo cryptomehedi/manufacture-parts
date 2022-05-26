@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Reviews = () => {
     const [reviews, setReview] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:4000/reviews')
+        axios.get('https://manufacture-parts.herokuapp.com/reviews')
         .then(data => setReview((data.data).reverse()))
     },[])
     return (

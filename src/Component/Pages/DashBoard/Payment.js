@@ -12,7 +12,7 @@ const stripePromise = loadStripe('pk_test_51L1XmRBzpOyvVWJMUt5sh1mooz3W9JT5ZupXt
 const Payment = () => {
     const {id} = useParams()
 
-    const {data , isLoading} = useQuery(['order',id], () => axiosPrivate.get(`http://localhost:4000/order/${id}`))
+    const {data , isLoading} = useQuery(['order',id], () => axiosPrivate.get(`https://manufacture-parts.herokuapp.com/order/${id}`))
     if(isLoading){
         return <Spinner/>
     }

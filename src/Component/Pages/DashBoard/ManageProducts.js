@@ -14,7 +14,7 @@ const ManageProducts = () => {
     const [deleteProduct, setDeleteProduct] =useState(null)
 
 
-    const {data: allParts, isLoading, refetch} = useQuery('MyParts', ()=> axiosPrivate.get(`http://localhost:4000/allParts`))
+    const {data: allParts, isLoading, refetch} = useQuery('MyParts', ()=> axiosPrivate.get(`https://manufacture-parts.herokuapp.com/allParts`))
     if(isLoading){
         return <div className="text-center"><Spinner text='Your Total Appointments are Loading...' /></div>
     }
@@ -25,7 +25,7 @@ const ManageProducts = () => {
         
         const available = part.available +  parseInt(count)
         const newAvailable = {available}
-        await axiosPrivate.put(`http://localhost:4000/inventory/${_id}`, {newAvailable , user} )
+        await axiosPrivate.put(`https://manufacture-parts.herokuapp.com/inventory/${_id}`, {newAvailable , user} )
         .then(data=>{
             if (data.data.modifiedCount === 1){
                 toast.success(`${name} Updated successfully`)

@@ -17,7 +17,7 @@ const CheckoutForm = ({orderItem}) => {
 
 
     useEffect(()=>{
-        axios.post('http://localhost:4000/create-payment-intent', {totalPrice})
+        axios.post('https://manufacture-parts.herokuapp.com/create-payment-intent', {totalPrice})
         .then(data=>{
             if(data?.data?.clientSecret){
                 setClientSecret(data.data.clientSecret)
@@ -79,7 +79,7 @@ const CheckoutForm = ({orderItem}) => {
 
             }
 
-            axiosPrivate.put(`http://localhost:4000/order/${_id}`, payment)
+            axiosPrivate.put(`https://manufacture-parts.herokuapp.com/order/${_id}`, payment)
             .then(data=>{
                 if(data.status === 200){
                     toast.success(`Your Transaction Is Completed`)

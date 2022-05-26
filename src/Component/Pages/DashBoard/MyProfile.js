@@ -10,7 +10,7 @@ import Spinner from '../Shared/Spinner';
 const MyProfile = () => {
     const { register, formState: { errors }, handleSubmit} = useForm();
     const [user] = useAuthState(auth)
-    const {data: userProfile, isLoading, refetch} = useQuery('userProfile', ()=> axiosPrivate.get(`http://localhost:4000/user/${user.email}`))
+    const {data: userProfile, isLoading, refetch} = useQuery('userProfile', ()=> axiosPrivate.get(`https://manufacture-parts.herokuapp.com/user/${user.email}`))
     // console.log(userProfile);
     if(isLoading){return <Spinner/>}
     const onSubmit = async data => {
@@ -19,7 +19,7 @@ const MyProfile = () => {
         const phone = data.phone
         const address = data.address
         const updateProfile = {displayName, education, phone, address}
-        await axiosPrivate.put(`http://localhost:4000/users/${user.email}`, updateProfile )
+        await axiosPrivate.put(`https://manufacture-parts.herokuapp.com/users/${user.email}`, updateProfile )
         .then(data => {
             console.log(data)
             if(data.data.modifiedCount === 1 && data.data.matchedCount){
