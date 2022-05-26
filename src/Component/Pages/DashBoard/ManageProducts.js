@@ -22,10 +22,10 @@ const ManageProducts = () => {
     const handleSubmit= async part=> {
         // console.log(part)
         let {name, _id}   = part
-        
+        const userInfo = user.email
         const available = part.available +  parseInt(count)
         const newAvailable = {available}
-        await axiosPrivate.put(`https://manufacture-parts.herokuapp.com/inventory/${_id}`, {newAvailable , user} )
+        await axiosPrivate.put(`http://localhost:4000/inventory/${_id}`, {newAvailable , userInfo} )
         .then(data=>{
             if (data.data.modifiedCount === 1){
                 toast.success(`${name} Updated successfully`)
