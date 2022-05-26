@@ -2,7 +2,6 @@ import React  from 'react';
 import { useForm } from 'react-hook-form';
 import auth from '../../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axiosPrivate from '../../Api/Axios';

@@ -20,6 +20,10 @@ import ManageProducts from "./Component/Pages/DashBoard/ManageProducts";
 import RequireAuth from "./Component/Pages/Shared/RequireAuth";
 import RequireAdmin from "./Component/Pages/Shared/RequireAdmin";
 import Payment from "./Component/Pages/DashBoard/Payment";
+import Blogs from "./Component/Pages/Blogs/Blogs";
+import About from "./Component/Pages/About-Contract-Us/About";
+import ContactUs from "./Component/Pages/About-Contract-Us/ContactUs";
+import PageNotFound from "./Component/Pages/PageNotFound";
 
 
 function App() {
@@ -28,12 +32,16 @@ function App() {
       <Nav/>
       <div className='px-4 md:px-9 lg:px-12'>
         <Routes>
+          <Route path="*" element={<PageNotFound/>} />
           <Route path="/" element={<Home/>} />
           <Route path="inventory" element={<Inventory/>} />
           <Route path="/inventory/:partsId" element={<RequireAuth><PartsDetails/></RequireAuth>} />
           <Route path="/inventory/:partsId/purchase" element={<RequireAuth><Purchase/></RequireAuth>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Registration/>} />
+          <Route path="/blogs" element={<Blogs/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact-us" element={<ContactUs/>} />
           <Route path="/dashboard" element={<RequireAuth><DashBoard/></RequireAuth>} >
             <Route index element={<RequireAuth><MyOrder/></RequireAuth>}/>
             <Route path="my-review" element={<RequireAuth><MyReview /></RequireAuth>} />

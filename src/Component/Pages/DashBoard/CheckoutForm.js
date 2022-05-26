@@ -110,7 +110,7 @@ const CheckoutForm = ({orderItem}) => {
                     },
                 }}
             />
-            <button className="btn btn-sm border-0 my-5 bg-gradient-to-r from-secondary to-primary text-white" type="submit">
+            <button className="btn btn-sm border-0 my-5 bg-gradient-to-r from-secondary to-primary text-white" type="submit" disabled={!stripe || !clientSecret || cardSuccess}>
                 Pay
             </button>
             {

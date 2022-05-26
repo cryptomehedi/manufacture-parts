@@ -11,6 +11,7 @@ const ConfirmOrder = ({refetch, confirmOrder , setConfirmOrder}) => {
                 if(data.data.modifiedCount === 1){
                     toast.success(`Parts Shipped Successfully`)
                     refetch()
+                    setConfirmOrder(null)
                 }
             })
         

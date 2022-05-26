@@ -43,7 +43,7 @@ const MyOrder = () => {
                             <td>$ {o.totalPrice}</td>
                             <td>
                                 {(o.totalPrice && !o.paid) && <Link to={`/dashboard/payment/${o._id}`}><button className='btn btn-sm bg-gradient-to-r from-secondary to-primary text-white border-0 '>Pay Now</button></Link>}
-                                {(o.totalPrice && o.paid) && <><span className='text-green-400 font-bold'>Paid</span></>}
+                                {(o.totalPrice && o.paid) && <><span className='text-green-400 font-bold'>Tx.ID- {o.transactionId.slice(7,500)}</span></>}
                             </td>
                             <td><label onClick={()=>setDeleteOrder(o)} htmlFor="delete-Confirm-Modal" className="btn bg-transparent hover:bg-gradient-to-r from-secondary to-primary hover:text-white text-red-400 btn-xs border-0 cursor-pointer w-10 rounded-full">{<TrashIcon/>}</label></td>
                         </tr>)
